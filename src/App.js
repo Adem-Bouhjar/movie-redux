@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import MovieList from './Components/MovieList/MovieList';
+import AddMovie from './Components/AddMovie/AddMovie';
+import FilterByName from './Components/FilterByName/FilterByName';
+import FilterByRating from './Components/Rating/Rating';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const movieList = useSelector((state) => state.movieList);
+  const inputSearch = useSelector((state) => state.inputSearch);
+  const rating = useSelector((state) => state.rating);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Movie List</h1>
+      <FilterByName />
+      <FilterByRating />
+      <AddMovie />
+      <MovieList movies={movieList} inputSearch={inputSearch} rating={rating} />
     </div>
   );
 }
