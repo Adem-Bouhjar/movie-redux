@@ -1,6 +1,6 @@
 import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
-// import './MovieList.css'
+import './MovieList.css'
 
 const MovieList = ({movies, inputSearch,rating }) => {
 
