@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import './index.css';
 import { Provider } from 'react-redux';
 import store from './redux/Store/store';
 import { BrowserRouter } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './Pages/Home';
+import 'antd/dist/reset.css'; // For Ant Design v5+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-    <App />
+    <Home />
     </BrowserRouter>
   </Provider>
 );

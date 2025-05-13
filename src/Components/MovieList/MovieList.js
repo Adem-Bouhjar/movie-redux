@@ -5,7 +5,7 @@ import './MovieList.css'
 const MovieList = ({movies, inputSearch,rating }) => {
 
   return (
-    <div className='card-group'>
+    <div className='card-group '>
         {movies
         .filter((el) => el.title.toLowerCase().includes(inputSearch.toLowerCase())
       && el.rating >= rating)

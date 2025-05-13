@@ -13,7 +13,7 @@ const MovieCard = ({ movie }) => {
           <Card.Title>{movie.title}</Card.Title>
           <Card.Text>{movie.description}</Card.Text>
           <Card.Text>
-            Rating: <Rating isMovieRating={true} movieRating={movie.rating} />
+            Rating: <Rating isMovieRating={true} movieRating={movie.rating} /> ({movie.rating})
           </Card.Text>
           <Link to={`/movie/${movie.id}`} className='link' state={{ movie }}>
             <Button variant='primary'>See Trailer</Button>

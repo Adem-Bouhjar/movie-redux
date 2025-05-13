@@ -1,0 +1,27 @@
+/* NavBar.css */
+
+header {
+    margin-bottom: 30px;
+  }
+  
+  .navbar {
+    background-color: #333 !important; 
+    padding: 10px 0;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff !important;
+  }
+  
+  .nav-link {
+    color: #ddd !important;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #fff !important;
+  }
+  

@@ -1,22 +1,37 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { setRating } from '../../redux/actions/movieActions';
+import { Rate, Flex } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { setRating } from "../../redux/actions/movieActions";
 
-function FilterByRating() {
+const desc = ["terrible", "bad", "normal", "good", "wonderful"];
+
+const Rating = ({ isMovieRating = false, movieRating }) => {
   const dispatch = useDispatch();
   const rating = useSelector((state) => state.rating);
 
-  return (
-    <div>
-      <span>Minimum rating:</span>
-      <input
-        type="number"
-        min="0"
-        max="10"
-        value={rating}
-        onChange={(e) => dispatch(setRating(Number(e.target.value)))}
-      />
-    </div>
-  );
-}
+  const handleChange = (value) => {
+    dispatch(setRating(value));
+  };
 
-export default FilterByRating;
+  return (
+    <Flex gap="small" vertical>
+      {isMovieRating ? (
+        <>
+          <Rate allowHalf disabled value={movieRating} tooltips={desc} />
+        </>
+      ) : (
+        <>
+          <span>Minimum rating:</span>
+          <Rate
+            allowHalf
+            tooltips={desc}
+            onChange={handleChange}
+            value={rating}
+            count={5} // use 10 if your ratings go up to 10
+          />
+        </>
+      )}
+    </Flex>
+  );
+};
+
+export default Rating;
